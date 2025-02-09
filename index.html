@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบบันทึกค่าใช้จ่ายรายวัน</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">บันทึกค่าใช้จ่าย</h2>
+
+        <!-- ฟอร์มเพิ่มค่าใช้จ่าย -->
+        <form id="expenseForm" class="space-y-3">
+            <input type="text" id="title" placeholder="รายการ" class="w-full p-2 border rounded" required>
+            <input type="number" id="amount" placeholder="จำนวนเงิน" class="w-full p-2 border rounded" required>
+            <select id="category" class="w-full p-2 border rounded" required>
+                <option value="food">อาหาร</option>
+                <option value="transport">การเดินทาง</option>
+                <option value="shopping">ช้อปปิ้ง</option>
+            </select>
+            <input type="date" id="date" class="w-full p-2 border rounded" required>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded w-full">เพิ่มค่าใช้จ่าย</button>
+        </form>
+
+        <!-- ตารางแสดงรายการ -->
+        <h2 class="text-xl font-bold mt-6">รายการค่าใช้จ่าย</h2>
+        <table class="w-full mt-3 border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border p-2">รายการ</th>
+                    <th class="border p-2">จำนวน</th>
+                    <th class="border p-2">หมวดหมู่</th>
+                    <th class="border p-2">วันที่</th>
+                    <th class="border p-2">ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="expenseTable"></tbody>
+        </table>
+    </div>
+</body>
+</html>
